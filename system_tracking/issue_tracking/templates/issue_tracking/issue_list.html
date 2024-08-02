@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Issue List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .create-button {
+            margin-bottom: 20px;
+            display: inline-block;
+            padding: 10px 15px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #28a745;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .create-button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Issue List</h1>
+        <a href="{% url 'create_issue' %}" class="create-button">Create New Issue</a>
+        <ul>
+            {% for issue in issues %}
+            <li>
+                <a href="{% url 'issue_detail' issue.pk %}">{{ issue.title }}</a>
+            </li>
+            {% empty %}
+            <li>No issues available.</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

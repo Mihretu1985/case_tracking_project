@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Issue Detail</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <h1>Issue Detail</h1>
+    <p><strong>Title:</strong> {{ issue.title }}</p>
+    <p><strong>Description:</strong> {{ issue.description }}</p>
+    <!-- Display other issue details as needed -->
+    
+    <a href="{% url 'issue_update' pk=issue.pk %}">Edit Issue</a>
+    <a href="{% url 'issue_list' %}">Back to Issue List</a>
+</body>
+</html>
+
+

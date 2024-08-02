@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Home</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <h1>Welcome to the User Home Page</h1>
+    
+    <p>Here you can manage your profile, view notifications, and more.</p>
+
+    <!-- Navigation Links -->
+    <a href="{% url 'issue_list' %}">Go to Issue List</a>
+    <a href="{% url 'create_issue' %}">Create New Issue</a>
+
+    <!-- Additional content can be added here -->
+</body>
+</html>
+
+
